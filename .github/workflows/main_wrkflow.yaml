@@ -1,0 +1,45 @@
+name: Main Workflow
+
+on:
+  pull_request: 
+
+  workflow_dispatch: 
+
+concurrency:
+  group: demo
+  cancel-in-progress: true
+
+jobs:
+  build:
+    if: github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.10,3.11]
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{matrix.python-version}}
+
+      - name: Print python version
+        run: python --version
+
+      
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print message
+        run: echo "Running tests"
+    
+  
+    
+
+
+  
