@@ -1,3 +1,6 @@
+# 'steps' are not used here cz this wrkflow isn't doing any work itself. (no work --> so no steps)
+# Its only job is to delegate execution to another workflow.
+
 name: Workflow to test reusable.yaml
 
 on:
