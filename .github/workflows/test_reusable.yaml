@@ -5,11 +5,7 @@ on:
 
 jobs:
   call_workflow:
-    runs-on: ubuntu-latest
-    
-    steps:
-      - name: test reusable file
-        uses: ./.github/workflows/reusable.yaml
-        with:
-          username: Rose
+    uses: ./.github/workflows/reusable.yaml
+    with:
+      username: Rose
   
