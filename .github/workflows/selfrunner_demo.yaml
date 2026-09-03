@@ -9,11 +9,11 @@ jobs:
 
     steps:
       - name: Display Computer name
-        run: echo 'Computer name = $ENV.COMPUTERNAME'
+        run: echo 'Computer name = $env:COMPUTERNAME'
         shell: pwsh
 
       - name: Display username
-        run: echo 'Username = $ENV.USERNAME'
+        run: echo 'Username = $env:USERNAME'
         shell: pwsh
 
       - name: Display hostname
