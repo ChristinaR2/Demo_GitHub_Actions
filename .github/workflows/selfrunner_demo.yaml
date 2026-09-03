@@ -13,12 +13,7 @@ jobs:
         shell: powershell
 
       - name: Display username
-        run: echo "Username = $env:USERNAME"
-        shell: powershell
-
-      - name: Display hostname
-        run: hostname
-        shell: powershell
+        run: echo "Username = $env:USERNAME"  
 
       - name: Display current working directory
         run: Get-Location
