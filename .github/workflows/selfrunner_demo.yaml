@@ -9,15 +9,15 @@ jobs:
 
     steps:
       - name: Display Computer name
-        run: echo 'Computer name = $env:COMPUTERNAME'
+        run: echo "Computer name = $env:COMPUTERNAME"
         shell: pwsh
 
       - name: Display username
-        run: echo 'Username = $env:USERNAME'
+        run: echo "Username = $env:USERNAME"
         shell: pwsh
 
       - name: Display hostname
-        run: echo 'hostname'
+        run: hostname
         shell: pwsh
 
       - name: Display current working directory
