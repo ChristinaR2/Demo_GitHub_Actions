@@ -10,20 +10,20 @@ jobs:
     steps:
       - name: Display Computer name
         run: echo "Computer name = $env:COMPUTERNAME"
-        shell: pwsh
+        shell: powershell
 
       - name: Display username
         run: echo "Username = $env:USERNAME"
-        shell: pwsh
+        shell: powershell
 
       - name: Display hostname
         run: hostname
-        shell: pwsh
+        shell: powershell
 
       - name: Display current working directory
         run: Get-Location
-        shell: pwsh
+        shell: powershell
 
       - name: Display OS information
         run: systeminfo | findstr /B /C:"OS Name" /C:"OS Version"
-        shell: pwsh
+        shell: powershell
