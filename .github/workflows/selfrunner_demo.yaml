@@ -1,0 +1,29 @@
+name: Testing self-hosted runner
+
+on:
+  workflow_dispatch: 
+
+jobs:
+  test-selfhosted-runner:
+    runs-on: self-hosted
+
+    steps:
+      - name: Display Computer name
+        run: echo 'Computer name = $ENV.COMPUTERNAME'
+        shell: pwsh
+
+      - name: Display username
+        run: echo 'Username = $ENV.USERNAME'
+        shell: pwsh
+
+      - name: Display hostname
+        run: echo 'hostname'
+        shell: pwsh
+
+      - name: Display current working directory
+        run: Get-Location
+        shell: pwsh
+
+      - name: Display OS information
+        run: systeminfo | findstr /B /C:"OS Name" /C:"OS Version"
+        shell: pwsh
